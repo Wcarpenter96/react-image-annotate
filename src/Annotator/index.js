@@ -153,9 +153,9 @@ export const Annotator = ({
       } else if (action.buttonName === "Prev" && onPrevImage) {
         return onPrevImage(without(state, "history"))
       }
-      if (action.type != "MOUSE_MOVE"){
-        return onChange(without(state, "history"))
-      }
+    }
+    if (action.type != "MOUSE_MOVE"){
+      return onChange(without(state, "history"))
     }
     dispatchToReducer(action)
   })
