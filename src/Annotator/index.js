@@ -154,10 +154,8 @@ export const Annotator = ({
         return onPrevImage(without(state, "history"))
       }
     }
-    if (action.type != "MOUSE_MOVE"){
-      return onChange(without(state, "history"))
-    }
     dispatchToReducer(action)
+    return onChange(without(state, "history"))
   })
 
   const onRegionClassAdded = useEventCallback((cls) => {
